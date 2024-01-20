@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -29,13 +30,35 @@
         <main class="main">
             <section id="top" class="top">
                 <div class="top__wrapper">
+                    <div class="top__slider--btns">
+                        <svg class="top__slider--prev" width="76" height="76" viewBox="0 0 76 76" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M47.5 19L28.5 38L47.5 57" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <svg class="top__slider--next" width="76" height="76" viewBox="0 0 76 76" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.5 57L47.5 38L28.5 19" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
                     <div class="top__title">
                         Remarkable Design to Inspire Life
                     </div>
-                    <div class="top__slider">
-                        <div class="top__slide">
-                            <img src="assets/img/top.jpg" alt="">
+                    <div class="top__slider swiper">
+
+                        <div class="swiper-wrapper swiper-container">
+                            <div class="top__slide swiper-slide">
+                                <img src="assets/img/top-1.jpg" alt="">
+                            </div>
+                            <div class="top__slide swiper-slide">
+                                <img src="assets/img/top-2.webp" alt="">
+                            </div>
+                            <div class="top__slide swiper-slide">
+                                <img src="assets/img/top-3.webp" alt="">
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -78,10 +101,59 @@
                     </div>
                 </div>
             </section>
+            <section class="count">
+                <div class="count__wrapper">
+                    <div class="count__item">
+                        <div class="count__title">
+                            20+
+                        </div>
+                        <div class="count__text">
+                            Years of Experience
+                        </div>
+                    </div>
+                    <div class="count__item">
+                        <div class="count__title">
+                            100%
+                        </div>
+                        <div class="count__text">
+                            happy customers
+                        </div>
+                    </div>
+                    <div class="count__item">
+                        <div class="count__title">
+                            350+
+                        </div>
+                        <div class="count__text">
+                            Completed Projects
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="approach" style="background-image: url(assets/img/approach-bg.jpg);">
+                <div class="approach__wrapper">
+                    <h2><span>our</span> approach</h2>
+                    <div class="approach__wrapper--text">
+                        <p>
+                            At Remark Interiors, we’re not just about making things look good - our design philosophy runs
+                            deeper. We believe your home should tell your story, reflect your personality, and suit your
+                            lifestyle.We’re big on teamwork. Your thoughts are like gold to us, and we’re right there with
+                            you every step of the way. From the first chat to the big reveal, we take the time to understand
+                            your needs, making sure every design choice fits your lifestyle seamlessly.
+                        </p>
+                        <p>At Remark Interiors, we’re not just about making things look good - our design philosophy runs
+                            deeper. We believe your home should tell your story, reflect your personality, and suit your
+                            lifestyle.We’re big on teamwork. Your thoughts are like gold to us, and we’re right there with
+                            you every step of the way. From the first chat to the big reveal, we take the time to understand
+                            your needs, making sure every design choice fits your lifestyle seamlessly.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer id="footer" class="footer">
 
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="assets/js/main.js"></script>
     </div>
 
