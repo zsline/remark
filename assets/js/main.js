@@ -21,7 +21,9 @@ playBtn.forEach((el=>{
     });
 }));
 
-new Swiper('.top__slider',{
+
+
+const topSlider = new Swiper('.top__slider',{
     slidesPerView: 1,
     effect: 'slide',
     speed: 1500,
@@ -30,4 +32,17 @@ new Swiper('.top__slider',{
         nextEl: '.top__slider--next',
         prevEl: '.top__slider--prev',
       },
+
 });
+const pauseSlider = document.querySelector('.top__slider--pause');
+const playSlider = document.querySelector('.top__slider--play');
+pauseSlider.addEventListener('click', function() {
+    topSlider.autoplay.stop();
+    this.style.display = 'none';
+    playSlider.style.display = 'block';
+})
+playSlider.addEventListener('click', function() {
+    topSlider.autoplay.start();
+    this.style.display = 'none';
+    pauseSlider.style.display = 'block';
+})
