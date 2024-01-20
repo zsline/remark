@@ -2,8 +2,9 @@ const navMenu = document.querySelector('.header__nav ul');
 const navMenuItem = navMenu.querySelectorAll('li');
 let widthItem = navMenu.offsetWidth / navMenuItem.length;
 navMenuItem.forEach((el) => {
-    el.style.width = widthItem+'px';
+    el.style.width = widthItem + 'px';
 });
+console.log(widthItem);
 
 
 // Video 1 ===================
@@ -22,7 +23,7 @@ playBtn.forEach((el=>{
 
 new Swiper('.top__slider',{
     slidesPerView: 1,
-    effect: 'fade',
+    effect: 'slide',
     speed: 1500,
     autoplay: true,
     navigation: {
