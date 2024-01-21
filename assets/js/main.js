@@ -32,6 +32,18 @@ const topSlider = new Swiper('.top__slider',{
       },
 
 });
+const customerSlider = new Swiper('.customer__slider',{
+    spaceBetween: 40,
+    slidesPerView: 1,
+    effect: 'slide',
+    speed: 1500,
+    autoplay: true,
+    navigation: {
+        nextEl: '.customer__slider--next',
+        prevEl: '.customer__slider--prev',
+      },
+
+});
 const pauseSlider = document.querySelector('.top__slider--pause');
 const playSlider = document.querySelector('.top__slider--play');
 pauseSlider.addEventListener('click', function() {
