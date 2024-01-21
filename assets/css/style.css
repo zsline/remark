@@ -219,6 +219,7 @@ h2{
     font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
+    width: max-content;
 }
 h2>span{
     font-family: 'SaolDisplay';
@@ -345,8 +346,8 @@ h3{
 .top__slider--play{
     display: none;
     position: absolute;
-    bottom: 18px;
-    right: 14px;
+    bottom: 20px;
+    right: 17px;
     z-index: 999;
     cursor: pointer;
 }
@@ -372,7 +373,7 @@ h3{
 
 .box-title{
     position: relative;
-    padding: 72px 0 38px;
+    padding: 82px 0 38px;
 }
 
 .box-title h2{
@@ -387,15 +388,14 @@ h3{
     position: absolute;
     height: 1px;
     max-width: 150px;
-    width: 20%;
+    width: 100%;
     background-color: var(--black);
+    top: 25px;
 }
 .box-title h2::after{
-    top: 20px;
     left: -200px;
 }
 .box-title h2::before{
-    top: 20px;
     right: -200px;
 }
 
@@ -433,13 +433,14 @@ h3{
 
 /* About ======================*/
 .about{
-    padding: 96px 0 56px;
+    padding: 90px 0 56px;
 }
 .about__wrapper{
-    max-width: 960px;
+    max-width: 976px;
     margin: 0 auto;
 }
 .about h2{
+    width: 100%;
     position: relative;
     text-align: center;
 }
@@ -472,7 +473,7 @@ h3{
 
 }
 .about__persone{
-    width: 35%;
+    width: 38.5%;
     flex: 0 0 auto;
     overflow: hidden;
 }
@@ -485,7 +486,7 @@ h3{
 
 .about__info{
     background-color: var(--beige-light);
-    padding: 57px 100px 50px;
+    padding: 57px 100px 44px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -573,13 +574,14 @@ h3{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
 }
 .approach__wrapper{
-    width: 70%;
+    width: 83%;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 56px 50px;
+    padding: 46px 50px 60px;
     margin: 0 auto;
     backdrop-filter: blur(2px);
 }
 .approach__wrapper h2{
+    width: 100%;
     position: relative;
     text-align: center;
     margin-bottom: 40px;
