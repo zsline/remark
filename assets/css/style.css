@@ -62,7 +62,11 @@ textarea {
     padding-block: 0;
     padding-inline: 0;
 }
-
+img{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
 h1,
 h2,
 h3,
@@ -628,7 +632,6 @@ h5{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 80px;
-    grid-gap: 80px;
 }
 .approach__wrapper--text p:nth-child(1){
     text-align: right;
@@ -651,7 +654,7 @@ h5{
 .portfolio__wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 8px;
+    gap: 8px;
 }
 .portfolio__item{
     position: relative;
@@ -698,9 +701,7 @@ h5{
 }
 
 /* Services ===========================*/
-.services{
-    padding-bottom: 76px;
-}
+
 .services__info{
     position: relative;
     text-align: center;
@@ -714,7 +715,8 @@ h5{
     margin: 0 auto;
     margin-top: 40px;
 }
-.services img{
+.services img,
+.add-services img{
     position: relative;
     z-index: 0;
     width: 100%;
@@ -724,7 +726,7 @@ h5{
 .services__wrapper{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 24px;
+    gap: 24px;
 }
 
 .services__item--count {
@@ -780,4 +782,49 @@ h5{
 }
 .services__item--text {
     max-width: 220px;
+}
+.add-services__wrapper{
+    position: relative;
+    margin-top: -5px;
+}
+.add-services__wrapper::after{
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 1px;
+    background-color: var(--black);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(-50% - 40px));
+}
+.add-services__wrapper.services__wrapper{
+    grid-template-columns: repeat(3, 1fr);
+}
+.add-services__item{
+    position: relative;
+    height: 308px;
+    margin-bottom: calc(40px * 2);
+}
+.add-services__item .services__item--title{
+    margin-top: 35px;
+}
+.add-services__wrapper .services__item--count{
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    height: 100%;
+    width: max-content;
+    line-height: 80%;
+}
+.add-services__wrapper .services__item--count::after{
+    width: 2px;
+    height: 308px;
+    left: 0px;
+    bottom: 0;
+}
+.add-services .about__info--link{
+    text-align: center;
 }
