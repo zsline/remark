@@ -130,6 +130,15 @@ p {
         /* Safari, Android, iOS */
 }
 @font-face {
+    font-family: 'NeueHaasDisplay';
+    font-weight: 100;
+    src:
+        url('../fonts/NeueHaasDisplayXThin.woff') format('woff'),
+        /* Firefox >= 3.6, any other modern browser */
+        url('../fonts/NeueHaasDisplayXThin.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+}
+@font-face {
     font-family: 'SaolDisplay';
     font-weight: 400;
     src:
@@ -231,6 +240,17 @@ h3{
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
+}
+h4{
+    font-family: "NeueHaasDisplay";
+    font-size: 32px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+h5{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 .wrapper{
     max-width: 1196px;
@@ -390,7 +410,7 @@ h3{
     max-width: 150px;
     width: 100%;
     background-color: var(--black);
-    top: 25px;
+    top: 27px;
 }
 .box-title h2::after{
     left: -200px;
@@ -604,13 +624,160 @@ h3{
     top: 50%;
 }
 .approach__wrapper--text{
-    columns: 2;
-    column-rule: 1px solid var(--black);
-    column-gap: 3em;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    grid-gap: 80px;
 }
-
+.approach__wrapper--text p:nth-child(1){
+    text-align: right;
+}
+.approach__wrapper--text::after{
+    position: absolute;
+    content: '';
+    height: 90%;
+    width: 1px;
+    background-color: var(--black);
+    top: 0;
+    left: 50%;
+    transform: translateX( -50%);
+}
 /*  portfolio ========================*/
 
 .portfolio{
-    padding: 96px 0 102px;
+    padding: 0px 0 76px;
+}
+.portfolio__wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+}
+.portfolio__item{
+    position: relative;
+    height: 386px;
+    color: var(--black);
+}
+.portfolio__item--info{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    z-index: 20;
+    transition: all 0.5s;
+}
+.portfolio__item--info:hover{
+    opacity: 1;
+}
+.portfolio__item--info span{
+    font-size: 12px;
+    font-weight: 200;
+}
+.portfolio__item a{
+    height: 100%;
+}
+.portfolio__item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.portfolio .about__info--link{
+    text-align: center;
+    margin-top: 56px;
+}
+
+/* Services ===========================*/
+.services{
+    padding-bottom: 76px;
+}
+.services__info{
+    position: relative;
+    text-align: center;
+    padding: 56px 0;
+    background-color: var(--beige-light);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+.services__info p{
+    max-width: 580px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.services img{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.services__wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px;
+}
+
+.services__item--count {
+    position: relative;
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--beige-light);
+    display: inline-block;
+    line-height: 150%;
+    width: 48%;
+}
+
+.services__item--count::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--beige-light);
+    left: 0;
+    bottom: 22px;
+}
+.services__item--content {
+    display: flex;
+}
+.services__item--content img{
+    width: 48%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 24px;
+}
+.services__item--info {
+    position: relative;
+    padding-left: 34px;
+}
+.services__item--info::after{
+    position: absolute;
+    content: '';
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--beige-light);
+    top: 7px;
+    left: 0;
+}
+.services__item--title {
+    font-family: 'OpenSans';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    margin-bottom: 16px;
+    max-width: 222px;
+}
+.services__item--text {
+    max-width: 220px;
 }
