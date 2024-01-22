@@ -1,3 +1,33 @@
+  // Scroll header ===============================
+
+    //Записываем, сколько проскроллено по вертикали
+    let scrollpos = window.scrollY;
+
+    const header = document.querySelector(".header");
+    const scroller = document.querySelector(".scroll-top");
+  
+    //Сколько пикселей нужно проскролить, чтобы добавить класс. Можете изменить значение
+    const scrollChange = 1860;
+  
+    //Функция, которая будет добавлять класс
+    const add_class_on_scroll = () => header.classList.add("scroll");
+    const add_clas_scroll = () => scroller.classList.add("scroll");
+    const remove_class_on_scroll = () => header.classList.remove("scroll");
+    const remove_class_scroll = () => scroller.classList.remove("scroll");
+  
+    //Отслеживаем событие "скролл"
+    if(header){
+      window.addEventListener('scroll', function() { 
+        scrollpos = window.scrollY;
+  
+      //Если прокрутили больше, чем мы указали в переменной scrollChange, то выполняется функция добавления класса
+          if (scrollpos > scrollChange) { add_class_on_scroll(), add_clas_scroll() }
+        if (scrollpos < scrollChange) { remove_class_on_scroll(), remove_class_scroll() }
+      })
+    }
+    document.querySelector('.scroll-top').onclick = () => {
+        window.scrollTo(pageYOffset, 0);
+    }
 const navMenu = document.querySelector('.header__nav ul');
 const navMenuItem = navMenu.querySelectorAll('li');
 let widthItem = navMenu.offsetWidth / navMenuItem.length;

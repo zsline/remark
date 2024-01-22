@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -307,7 +308,20 @@ section>img{
     margin-bottom: 4px;
 }
 
+.scroll-top{
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 70px;
+    right: 43px;
+}
+.scroll-top.scroll{
+    display: block;
+
+}
+
 /* === Header ====================*/
+
 
 .header__logo{
     max-width: 395px;
@@ -369,7 +383,44 @@ section>img{
     text-transform: uppercase;
     font-size: 12px;
 }
-
+.header.scroll{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    top: 0;
+    left: 0; 
+    right: 0;
+    max-width: 1180px;
+    margin: 0 auto;
+    background-color: var(--white);
+    z-index: 999;
+}
+.header.scroll .header__logo{
+    max-width: 284px;
+    margin: 0;
+    padding: 24px 0;
+    margin-left: 32px;
+}
+.header.scroll .header__nav{
+    display: inline;
+    max-width: 790px;
+}
+.header.scroll .header__nav a{
+    font-size: 10px;
+}
+.header.scroll nav ul{
+    padding-bottom: 0;
+    gap: 20px;
+}
+.header.scroll nav ul li{
+    padding-top: 0;
+    padding-bottom: 24px;
+}
+.header.scroll nav ul li::after{
+    top: auto;
+    bottom: 0;
+}
 /* === Top ====================*/
 .top__wrapper{
     box-sizing: border-box;
@@ -734,6 +785,7 @@ section>img{
 }
 .portfolio__item a{
     height: 100%;
+    width: 100%;
 }
 .portfolio__item img{
     width: 100%;
