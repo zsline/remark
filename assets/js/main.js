@@ -7,7 +7,7 @@
     const scroller = document.querySelector(".scroll-top");
   
     //Сколько пикселей нужно проскролить, чтобы добавить класс. Можете изменить значение
-    const scrollChange = 1860;
+    const scrollChange = 2860;
   
     //Функция, которая будет добавлять класс
     const add_class_on_scroll = () => header.classList.add("scroll");
