@@ -208,6 +208,7 @@ p {
 
 /* === Root ====================*/
 :root{
+    --button: #2E2E2E;
     --bg-color: #d7d7d7;
     --white: #fff;
     --black: #000;
@@ -256,12 +257,15 @@ h5{
     text-transform: uppercase;
     font-weight: 400;
 }
+.main{
+    background-color: var(--white);
+    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
+}
 .wrapper{
     max-width: 1196px;
     margin: 0 auto;
     padding: 0 8px;
-    background-color: var(--white);
-    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
+
 }
 .title-accent{
     display: inline;
@@ -1022,7 +1026,7 @@ width: 50%;
 .areas__wrapper{
     max-width: 778px;
     margin: 0 auto;
-    padding: 37px 72px;
+    padding: 37px 72px 24px;
     background-color: var(--beige-light);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: grid;
@@ -1051,10 +1055,13 @@ width: 50%;
     font-weight: 700;
     margin-bottom: 8px;
 }
+.areas__list ul{
+    margin-bottom: 14px;
+}
 .areas__list li{
     position: relative;
     padding-left: 12px;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-bottom: 4px;
 }
 .areas__list li::before{
@@ -1066,4 +1073,118 @@ width: 50%;
     height: 4px;
     border-radius: 50%;
     background-color: var(--black);
+}
+
+/* Contact =========================*/
+.contact__wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 128px;
+    margin-top: 40px;
+}
+.contact__wrapper::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: var(--black);
+    top: 0;
+    left: 50%;
+}
+.contact__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+}
+.contact__info p{
+    text-align: right;
+    margin: 0;
+    max-width: 378px;
+}
+.contact__info svg{
+    margin-right: 4.5px;
+}
+.contact__mail{
+    margin: 24px 0 16px;
+}
+.contact__form{
+    flex: 1 0 auto;
+    max-width: 378px;
+}
+.contact__form input{
+    color: var(--black);
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--black);
+    margin-bottom: 32px;
+}
+.contact__form input[type='submit']{
+    padding: 5px 66px;
+    background-color: var(--button);
+    color: var(--white);
+    display: inline-block;
+    width: max-content;
+    cursor: pointer;
+    margin: 0;
+}
+.contact__form input::placeholder{
+    color: var(--black);
+    opacity: 1;
+}
+.contact__form p{
+    margin: 0;
+    text-align: left;
+}
+
+/*Instagram ==============*/
+
+.box-title.instagram{
+    background-color: var(--beige-light);
+}
+.box-title.instagram h2::after{
+    left: -120px;
+}
+.box-title.instagram h2::before{
+    right: -120px;
+}
+.instagram__wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+}
+.instagram__wrapper img{
+    height: 277px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.badgets{
+    display: flex;
+    justify-content: center;
+}
+.badgets img{
+    max-width: 578px;
+    margin: 96px auto 32px;
+}
+
+/*===================== Footer ====================== */
+
+footer{
+    padding: 56px 0 32px;
+    text-align: center;
+}
+.footer__wrapper--info{
+    padding-top: 12px;
+    border-top: 1px solid var(--black);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+.footer__wrapper--social ul{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
