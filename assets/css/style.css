@@ -322,7 +322,11 @@ section>img{
 
 /* === Header ====================*/
 
-
+.header{
+    position: relative;
+    background-color: var(--white);
+    z-index: 999;
+}
 .header__logo{
     max-width: 395px;
     margin: 0 auto;
