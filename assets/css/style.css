@@ -1346,6 +1346,13 @@ width: 50%;
 .about-customer{
     padding-bottom: 96px;
 }
+
+
+/*===================== Services ==============*/
+
+.services-customer{
+    padding-bottom: 0;
+}
 /*===================== Footer ====================== */
 
 footer{
