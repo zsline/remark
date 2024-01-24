@@ -612,7 +612,7 @@ section>img{
 
 /* About ======================*/
 .about{
-    padding: 90px 0 56px;
+    padding: 90px 0 0px;
 }
 .about__wrapper{
     max-width: 976px;
@@ -709,6 +709,7 @@ section>img{
 .count{
     padding: 46px 0 26px;
     background-color: var(--beige-light);
+    margin-top: 96px;
 }
 .count__wrapper{
     display: flex;
@@ -1707,6 +1708,20 @@ width: 100%;
 .design-item__slider--prev,
 .design-item__slider--next{
     cursor: pointer;
+}
+.quote.design-quote .box-title__wrapper{
+    max-width: 977px;
+    margin-bottom: 6px;
+}
+.quote.design-quote h2{
+    max-width: 977px;
+}
+.design--why {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.quote.design-quote-last .box-title__wrapper{
+    margin-bottom: 96px;
 }
 /*===================== Footer ====================== */
 
