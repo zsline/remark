@@ -1485,6 +1485,7 @@ width: 50%;
 }
 .services-item__info{
     width: 388px;
+    flex: 0 0 auto;
 }
 .services-item__title{
     font-family: "OpenSans";
@@ -1497,6 +1498,7 @@ width: 50%;
 }
 .services-item p {
     max-width: 388px;
+    text-align: left;
 }
 .services-item__img{
     max-width: 560px;
@@ -1681,8 +1683,30 @@ width: 100%;
 .design-included h2{
     max-width: 512px;
 }
+.design-included .services-item__img{
+    max-width: 560px;
+    height: auto;
+}
 .design-included>.services-wrapper{
     margin-top: 40px;
+}
+.design-included .services-item {
+    position: relative;
+}
+
+.design-included .services-item .design-item__slider--btns{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.design-item__slider--prev,
+.design-item__slider--next{
+    cursor: pointer;
 }
 /*===================== Footer ====================== */
 
