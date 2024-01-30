@@ -363,6 +363,17 @@ section>img{
         backdrop-filter: blur(8px);
         box-shadow: var(--shadow-item);
         right: 16px;
+        bottom: 28px;
+    }
+}
+@media (max-width:640px) {
+    .scroll-top{
+        right: 8px;
+        bottom: 8px;
+        padding: 8px 10px 6px 10px;
+    }
+    .scroll-top svg{
+        width: 20px;
     }
 }
 
@@ -1227,6 +1238,7 @@ section>img{
 }
 .about__info--link-more{
     display: none;
+    cursor: pointer;
 }
 @media (max-width:967px) {
     .services__item--info{
@@ -2371,9 +2383,7 @@ width: 100%;
     .services-process__wrapper{
         padding: 20px clamp(28px, 6vw, 100px) 0;
     }
-    .services-process__item--info{
-        /* width: 70%; */
-    }
+
     .services-process__item--img {
         margin-left: 20px;
     }
@@ -2504,6 +2514,9 @@ width: 100%;
     .services-process__item--count{
         font-weight: 100;
     }
+    .services-item__count::after{
+        bottom: 4px;
+    }
 }
 @media (max-width:440px){
     .services-item__img{
@@ -2587,9 +2600,9 @@ width: 100%;
     max-width: 977px;
     margin-bottom: 6px;
 }
-.quote.design-quote h2{
+/* .quote.design-quote h2{
     max-width: 977px;
-}
+} */
 .design--why {
     padding-bottom: 0;
     margin-bottom: 0;
@@ -2598,6 +2611,9 @@ width: 100%;
     margin-bottom: 96px;
 }
 @media (max-width:640px){
+    .design-included h2{
+        width: clamp(214px, 62vw, 720px);
+    }
     .design-included .services-item__info p{
         padding: 0;
     } 
@@ -2625,6 +2641,16 @@ width: 100%;
         max-width: 326px;
     }
 }
+@media (max-width:500px){
+    .design-included .services-item .design-item__slider--btns{
+        bottom: 140px;
+    }
+}
+@media (max-width:390px){
+    .design-included .services-item .design-item__slider--btns{
+        bottom: 112px;
+    }
+}
 
 /*============== Gallery ==============*/
 .gallery-portfolio{
@@ -2633,7 +2659,10 @@ width: 100%;
 
 /* =============== Reviews =================== */
 .contact-title{
+    position: relative;
     background-color: var(--beige-light);
+    box-shadow: var(--shadow);
+    z-index: 2;
 }
 .reviews-wrapper .customer__slide{
     position: relative;
@@ -2748,6 +2777,9 @@ width: 100%;
     }
     .reviews-wrapper .about__info--link{
         margin-top: 32px;
+    }
+    .reviews-pagination{
+        padding-bottom: 56px;
     }
 }
 

@@ -158,6 +158,16 @@ if(openServices){
         });
     });
 }
+const openAddServices = document.querySelector('.about__info--link-more');
+const addServices = document.querySelectorAll('.add-services__item');
+if(openAddServices){
+    openAddServices.addEventListener('click', () => {
+        openAddServices.style.display = 'none';
+        addServices.forEach((el) =>{
+            el.style.display = 'block';
+        });
+    });
+}
 const openServicesProgress = document.querySelector('.services-process__more');
 const servicesProgress = document.querySelectorAll('.services-process__item');
 if(openServicesProgress){
