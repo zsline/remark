@@ -1,4 +1,7 @@
-  // Scroll header ===============================
+  
+  window.addEventListener('DOMContentLoaded', () => { // Структура страницы загружена и готова к взаимодействию
+    
+    // Scroll header ===============================
 
     //Записываем, сколько проскроллено по вертикали
     let scrollpos = window.scrollY;
@@ -41,7 +44,36 @@
 // });
 
 
-// Video 1 ===================
+//=================== Video ===================
+function videoPlayer (video) {
+    video.children[1].addEventListener('click', () => {
+        video.children[0].pause();
+        video.children[1].style.display = 'none';
+        video.children[2].style.display = 'block';
+    });
+    video.children[2].addEventListener('click', () => {
+        video.children[0].play();
+        video.children[2].style.display = 'none';
+        video.children[1].style.display = 'block';
+    });
+    video.children[3].addEventListener('click', () => {
+        video.children[0].muted = false;
+        video.children[3].style.display = 'none';
+        video.children[4].style.display = 'block';
+    });
+    video.children[4].addEventListener('click', () => {
+        video.children[0].muted = true;
+        video.children[4].style.display = 'none';
+        video.children[3].style.display = 'block';
+    });
+} 
+
+if(document.querySelector('video')){
+    videoPlayer (document.querySelector('.video-1'));
+    videoPlayer (document.querySelector('.video-2'));
+}
+
+
 
 let playBtn = document.querySelectorAll('.play-btn-start');
 
@@ -58,8 +90,9 @@ if(document.querySelector('.top__slider')){
         const topSlider = new Swiper('.top__slider',{
         slidesPerView: 1,
         effect: 'slide',
-        speed: 1500,
+        // speed: 1500,
         autoplay: true,
+        loop: true,
         navigation: {
             nextEl: '.top__slider--next',
             prevEl: '.top__slider--prev',
@@ -191,3 +224,46 @@ if(itemServicesDesign){
         });
     })
 }
+// Count Up =============================
+
+
+    function counter(item, num, time){
+        const count = new CountUp( // задаем необходимые параметры
+            item, // идентификатор элемента с числом
+            0, // начальное число
+            num, // конечное число
+            0, // количество цифр после запятой
+            time // продолжительность анимации в секундах
+            );
+            count.start();
+    }
+    const countObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting){
+                   counter(document.querySelector('#num1'), 20, 4);
+                    counter(document.querySelector('#num2'), 100, 4);
+                    counter(document.querySelector('#num3'), 350, 5);
+                    observer.unobserve(entry.target); 
+                }
+            });
+
+        },{
+            rootMargin: '-100px',
+        });
+    document.querySelectorAll('.count__title--num').forEach((el) => countObserver.observe(el));
+
+    // const imageObserver = new IntersectionObserver(
+    //     (entries, observer) => {
+    //         entries.forEach((entry) => {
+    //             if(entry.isIntersecting){
+    //                 console.log(entries);
+    //                 observer.unobserve(entry.target); 
+    //             }
+    //         });
+
+    //     },{
+    //         rootMargin: '80px',
+    //     });
+    // document.querySelectorAll('img').forEach((image) => imageObserver.observe(image));
+});
