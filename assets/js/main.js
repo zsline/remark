@@ -241,7 +241,7 @@ if(itemServicesDesign){
         (entries, observer) => {
             entries.forEach((entry) => {
                 if(entry.isIntersecting){
-                   counter(document.querySelector('#num1'), 20, 4);
+                    counter(document.querySelector('#num1'), 20, 4);
                     counter(document.querySelector('#num2'), 100, 4);
                     counter(document.querySelector('#num3'), 350, 5);
                     observer.unobserve(entry.target); 
@@ -266,4 +266,11 @@ if(itemServicesDesign){
     //         rootMargin: '80px',
     //     });
     // document.querySelectorAll('img').forEach((image) => imageObserver.observe(image));
+
+    const desProcessItem = document.querySelectorAll('.services-process__item--info');
+    desProcessItem.forEach((el) =>{
+        if(el.children[0].offsetHeight > 40){
+            el.style.transform = 'translateY(-20px)'
+        }
+    })
 });
