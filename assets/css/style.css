@@ -253,7 +253,7 @@ h2>span{
 }
 h3{
     font-family: 'OpenSans';
-    font-size: 32px;
+    font-size: clamp(20px, 3vw, 32px);
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
@@ -281,6 +281,7 @@ h5{
     padding: 0 8px;
 }
 .wrapper{
+    position: relative;
     max-width: 1196px;
     padding: 0 8px;
     margin: 0 auto;
@@ -312,7 +313,7 @@ section>img{
         padding: 0;
     }
 }
-@media (max-width:425px){
+@media (max-width:480px){
     body{
         padding: 0;
         background-color: #fff;
@@ -434,7 +435,7 @@ section>img{
     box-sizing: content-box;
     padding-top: 12px;
     height: 100%;
-    width: 140px;
+    width: 114px;
 }
 .header nav ul li:nth-child(3) {
     width: 150px;
@@ -510,11 +511,12 @@ section>img{
 }
 .header.scroll nav ul{
     padding-bottom: 0;
-    gap: 20px;
+    gap: clamp(5px, 0.6vw, 20px);
 }
 .header.scroll nav ul li{
     padding-top: 0;
     padding-bottom: 30px;
+    /* max-width: clamp(90px, 9vw, 114px); */
 }
 .header.scroll nav ul li::after{
     top: auto;
@@ -533,7 +535,13 @@ section>img{
 .close{
     display: none;
 }
-@media (max-width:1140px) {
+@media (max-width:1196px){
+    .header.scroll{
+       max-width: 89%; 
+       padding: 0 12px;
+    }
+}
+@media (max-width:960px) {
     .header nav ul{
         display: none;
     }
@@ -859,7 +867,7 @@ section>img{
 
 .about__info{
     background-color: var(--beige-light);
-    padding: 57px clamp(28px, 6.33vw, 100px) 44px;
+    padding: 57px clamp(28px, 4.33vw, 100px) 44px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1278,7 +1286,7 @@ section>img{
 }
 .services__item--title {
     font-family: 'OpenSans';
-    font-size: clamp(14px, 2.3vw, 18px);
+    font-size: clamp(14px, 2.1vw, 18px);
     font-weight: 700;
     line-height: 150%;
     margin-bottom: 16px;
@@ -2073,10 +2081,21 @@ width: 50%;
 }
 .about-quote>.box-title__wrapper{
     max-width: 980px;
+    padding-bottom: 0;
 }
-.about-quote>.box-title__wrapper h2{
+/* .about-quote>.box-title__wrapper h2{
     max-width: clamp(324px, 76vw, 980px);
     padding: 0 29px;
+} */
+.about-quote__desktop{
+    max-width: clamp(324px, 70vw, 730px);
+    margin: 0 auto;
+}
+.about-quote img{
+    width: 100%;
+}
+.about-quote__mobil{
+    display: none;
 }
 .about-team{
     padding-top: clamp(16px, 7.1vw, 82px);
@@ -2103,7 +2122,7 @@ width: 50%;
 }
 .about-team__item--title{
     font-family: 'OpenSans';
-    font-size: clamp(14px, 3vw, 24px);
+    font-size: clamp(14px, 2.6vw, 24px);
     font-weight: 700;
     text-transform: uppercase;
     margin-top: 16px;
@@ -2111,7 +2130,8 @@ width: 50%;
 }
 .about-team__item--desc{
     font-family: 'NeueHaasDisplay';
-    font-size: clamp(14px, 4vw, 32px);
+    font-size: clamp(14px, 2.6vw, 24px);
+    line-height: 130%;
     text-transform: uppercase;
     font-weight: 100;
     margin-top: 8px;
@@ -2165,6 +2185,10 @@ width: 50%;
 }
 .services-why__item:nth-last-child(1) .services-why__item--text::after{
     width: 0;
+}
+.services-why__img{
+    margin-top: 28px;
+    margin-bottom: 28px;
 }
 .box-title.about.services-about {
     padding: 32px 0 56px;
@@ -2755,13 +2779,30 @@ width: 100%;
 .design-item__slider--next{
     cursor: pointer;
 }
-.quote.design-quote .box-title__wrapper{
-    max-width: clamp(250px, 75vw, 790px);
-    margin-bottom: 6px;
-}
 
+.quote.design-quote .box-title__wrapper{
+    max-width: clamp(250px, 70vw, 790px);
+    padding: 0;
+    margin: 0 auto;
+}
+.quote .design-quote__desktop{
+    width: 100%;
+}
+.quote .design-quote__mobil{
+    display: none;
+}
 .design-quote img{
     width: 100%;
+}
+.quote__transform{
+    max-width: clamp(250px, 60vw, 700px);
+    margin: 0 auto;
+}
+.quote__transform img{
+    width: 100%;
+}
+.quote__transform--mobil{
+    display: none;
 }
 .design-quote__choose-remark-mobil{
     display: none;
@@ -2821,6 +2862,19 @@ width: 100%;
     .design-quote__choose-remark{
         display: none;
     }
+    .quote__transform--mobil{
+        margin: 0 auto;
+        display: block;
+    }
+    .quote__transform--desctop{
+        display: none;
+    }
+    .quote .design-quote__desktop{
+        display: none;
+    }
+    .quote .design-quote__mobil{
+        display: block;
+    }
 }
 @media (max-width:390px){
     .design-included .services-item .design-item__slider--btns{
@@ -2832,6 +2886,9 @@ width: 100%;
 .gallery-title{
     background-color: var(--beige-light);
     border-top: 6px solid var(--black);
+}
+.gallery-title h2{
+    width: clamp(150px, 20vw, 250px);
 }
 .gallery-portfolio{
     padding-bottom: 0;

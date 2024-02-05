@@ -124,13 +124,24 @@ if(document.querySelector('.customer__slider')){
         spaceBetween: 40,
         slidesPerView: 1,
         effect: 'slide',
-        speed: 1500,
-        // autoHeight: true,
-        // autoplay: true,
+        speed: 1000,
+        autoHeight: true,
+        autoplay: true,
         navigation: {
             nextEl: '.customer__slider--next',
             prevEl: '.customer__slider--prev',
         },
+        on: {
+            init() {
+              this.el.addEventListener('mouseenter', () => {
+                this.autoplay.stop();
+              });
+        
+              this.el.addEventListener('mouseleave', () => {
+                this.autoplay.start();
+              });
+            }
+          },
 
     });
 
@@ -253,19 +264,24 @@ if(itemServicesDesign){
         });
     document.querySelectorAll('.count__title--num').forEach((el) => countObserver.observe(el));
 
-    // const imageObserver = new IntersectionObserver(
-    //     (entries, observer) => {
-    //         entries.forEach((entry) => {
-    //             if(entry.isIntersecting){
-    //                 console.log(entries);
-    //                 observer.unobserve(entry.target); 
-    //             }
-    //         });
+    const videoObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                const video = entry.target;
+                if(entry.isIntersecting){
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
 
-    //     },{
-    //         rootMargin: '80px',
-    //     });
-    // document.querySelectorAll('img').forEach((image) => imageObserver.observe(image));
+        },{
+            threshold: [0.2, 0.9],
+            rootMargin: '-200px',
+        });
+    
+    
+    document.querySelectorAll('video').forEach((video) => videoObserver.observe(video));
 
     const desProcessItem = document.querySelectorAll('.services-process__item--info');
     desProcessItem.forEach((el) =>{
