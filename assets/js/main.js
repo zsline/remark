@@ -10,7 +10,7 @@
     const scroller = document.querySelector('.scroll-top');
   
     //Сколько пикселей нужно проскролить, чтобы добавить класс. Можете изменить значение
-    const scrollChange = 1860;
+    const scrollChange = 500;
   
     //Функция, которая будет добавлять класс
     const add_class_on_scroll = () => header.classList.add('scroll');
@@ -133,13 +133,29 @@ if(document.querySelector('.customer__slider')){
         },
         on: {
             init() {
-              this.el.addEventListener('mouseenter', () => {
-                this.autoplay.stop();
-              });
-        
-              this.el.addEventListener('mouseleave', () => {
-                this.autoplay.start();
-              });
+                const stopSlider = document.querySelector('.customer--pause');
+                const playSlider = document.querySelector('.customer--play');
+                stopSlider.addEventListener('click', () => {
+                    this.autoplay.stop();
+                    stopSlider.style.display = 'none';
+                    playSlider.style.display = 'block';
+                });
+                playSlider.addEventListener('click', () => {
+                    this.autoplay.start();
+                    playSlider.style.display = 'none';
+                    stopSlider.style.display = 'block';
+                });
+                const customerObserver = new IntersectionObserver(
+                    ([entry]) => {
+                            if(entry.isIntersecting){
+                                this.autoplay.start();
+                            } else {
+                                this.autoplay.stop();
+                            }
+                    },{
+                        threshold: [0.8, 0.8],
+                    });
+                customerObserver.observe(document.querySelector('.customer__slider'));
             }
           },
 
@@ -248,13 +264,15 @@ if(itemServicesDesign){
             );
             count.start();
     }
+
+// Counts Observer ==================   
     const countObserver = new IntersectionObserver(
         (entries, observer) => {
             entries.forEach((entry) => {
                 if(entry.isIntersecting){
-                    counter(document.querySelector('#num1'), 20, 4);
+                    counter(document.querySelector('#num1'), 20, 5);
                     counter(document.querySelector('#num2'), 100, 4);
-                    counter(document.querySelector('#num3'), 350, 5);
+                    counter(document.querySelector('#num3'), 350, 3.5);
                     observer.unobserve(entry.target); 
                 }
             });
@@ -264,6 +282,7 @@ if(itemServicesDesign){
         });
     document.querySelectorAll('.count__title--num').forEach((el) => countObserver.observe(el));
 
+// Video Observer ==================
     const videoObserver = new IntersectionObserver(
         (entries, observer) => {
             entries.forEach((entry) => {
@@ -276,12 +295,19 @@ if(itemServicesDesign){
             });
 
         },{
-            threshold: [0.2, 0.9],
-            rootMargin: '-200px',
+            threshold: [0.8, 0.8],
+            // rootMargin: '-200px',
         });
     
     
     document.querySelectorAll('video').forEach((video) => videoObserver.observe(video));
+// End Video Observer ==================
+
+// Customer Observer ==================
+
+
+
+
 
     const desProcessItem = document.querySelectorAll('.services-process__item--info');
     desProcessItem.forEach((el) =>{
