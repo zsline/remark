@@ -230,6 +230,20 @@ if(openAddServices){
 }
 const openServicesProgress = document.querySelector('.services-process__more');
 const servicesProgress = document.querySelectorAll('.services-process__item');
+const desProcessItem = document.querySelectorAll('.services-process__item--info');
+function desHeagth(){
+    desProcessItem.forEach((el) =>{
+        if(el.children[0].offsetHeight > 40){
+            el.style.transform = 'translateY(-20px)'
+        }
+    });
+}
+desHeagth();
+desProcessItem.forEach((el) =>{
+    if(el.children[0].offsetHeight > 40){
+        el.style.transform = 'translateY(-20px)'
+    }
+})
 if(openServicesProgress){
     openServicesProgress.addEventListener('click', () => {
     openServicesProgress.style.display = 'none';
@@ -237,6 +251,7 @@ if(openServicesProgress){
         el.style.display = 'block';
         el.style.paddingBottom = '41px';
     });
+    desHeagth();
 });
 }
 
@@ -309,10 +324,5 @@ if(itemServicesDesign){
 
 
 
-    const desProcessItem = document.querySelectorAll('.services-process__item--info');
-    desProcessItem.forEach((el) =>{
-        if(el.children[0].offsetHeight > 40){
-            el.style.transform = 'translateY(-20px)'
-        }
-    })
+
 });
