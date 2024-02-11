@@ -178,7 +178,7 @@ function bodyHiddenNoScroll(){
 
 
 // ============  Menu  ===================== //
-
+const main = document.querySelector('main');
 const menu = document.querySelector('#header');
 const menuOpen = document.querySelector('.header__menu');
 const menuClose = document.querySelector('.close');
@@ -192,6 +192,8 @@ menuClose.addEventListener('click', function(){
     bodyHiddenScroll()
 });
 
+let mainTop = menu.offsetHeight;
+main.style.paddingTop = mainTop + 'px';
 
 const openText = document.querySelectorAll('.customer__more');
 const constText = document.querySelectorAll('.customer__slide--text p');
@@ -319,10 +321,5 @@ if(itemServicesDesign){
 // End Video Observer ==================
 
 // Customer Observer ==================
-
-
-
-
-
 
 });
