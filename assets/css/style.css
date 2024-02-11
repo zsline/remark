@@ -253,6 +253,7 @@ h2{
 h2>span{
     font-family: 'SaolDisplay';
     font-weight: 400;
+    color: var(--text-dark);
 }
 h3{
     font-family: 'OpenSans';
@@ -440,6 +441,7 @@ section>img{
     padding: 32px 0 24px;
 }
 .header__logo img{
+    display: block;
     width: 100%;
     object-fit: contain;
 }
@@ -577,6 +579,52 @@ section>img{
     .header.scroll nav ul li:nth-child(3) {
         width: 124px;
     }
+}
+@media screen and (orientation: portrait)  {
+    .header.scroll,.header{
+        display: block;
+        padding: 0 10px;
+        z-index: 9999;
+    }
+    .header .header__logo,
+    .header.scroll .header__logo{
+        width: 100%;
+        margin: 0 auto;
+        padding: 16px 0;
+    }
+    .header.scroll .header__nav,
+    .header .header__nav {
+        width: 100%;
+    }
+    .header nav ul,
+    .header.scroll nav ul{
+        padding-bottom: 0;
+        gap: 10px;
+    }
+    .header nav ul li,
+    .header.scroll nav ul li{
+        padding-top: 12px;
+        padding-bottom: 30px;
+        height: 100%;
+        width: 80px
+    }
+    .header.scroll nav ul li.active::after{
+        top: -4px;
+    }
+    .header .header__nav a,
+    .header.scroll .header__nav a{
+        font-size: 10px;
+    }
+    .header nav ul li::after,
+    .header.scroll nav ul li::after{
+        top: 0;
+        bottom: auto;
+    }
+    .header nav ul li:nth-child(3),
+    .header.scroll nav ul li:nth-child(3) {
+        width: 140px;
+    }
+    
 }
 @media (max-width:800px){
     .header.scroll,.header{
