@@ -461,6 +461,9 @@ section>img{
 .header nav ul li:nth-child(3) {
     width: 160px;
 }
+.header.scroll nav ul li:nth-child(3) {
+    width: 150px;
+}
 
 .header nav ul li::after {
     content: '';
@@ -756,6 +759,20 @@ section>img{
     .header.is_open nav ul li::after{
         width: 100%;
         max-width: 100%;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        transform: translateX(0);
+    }
+    .header.scroll.is_open nav ul li::after{
+        width: 100%;
+        max-width: 100%;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        transform: translateX(0);
+    }
+    .header.scroll nav ul li.active::after{
         bottom: 0;
         left: 0;
         top: auto;
@@ -1295,7 +1312,6 @@ section>img{
 
 }
 @media (max-width:560px){
-
     .approach__title{
         top: -22vw;;
     }
@@ -1308,18 +1324,18 @@ section>img{
 /*  portfolio ========================*/
 
 .portfolio{
-    padding: 0px 0 76px;
+    /* padding: 0px 0 76px; */
 }
 .portfolio__wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 8px;
+    gap: 8px;
     width: 100%;
 }
 .design-portfolio>.portfolio__wrapper{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 8px;
+    gap: 8px;
     width: 100%;
 }
 
@@ -1327,6 +1343,10 @@ section>img{
     position: relative;
     color: var(--black);
     height: max-content;
+    aspect-ratio: 1/1;
+}
+.portfolio__item img{
+    display: block;
 }
 .portfolio__item--info{
     position: absolute;
@@ -1359,7 +1379,6 @@ section>img{
 
 }
 .portfolio__item img{
-    display: block;
     width: 100%;
     aspect-ratio: 1/1;
     height: 100%;
@@ -1548,11 +1567,12 @@ section>img{
     cursor: pointer;
 }
 .about-img {
-    
     padding-top: 56px;
+    width: 100%;
 }
 .about-img img{
     display: block;
+    width: 100%;
     box-shadow: var(--shadow);
 }
 @media (max-width:1196px){
@@ -2250,21 +2270,6 @@ width: 50%;
 @media (max-width:760px) {
     .box-title.instagram{
         padding: 32px 0;
-    }
-    .instagram__wrapper{
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    }
-    .instagram__wrapper img:nth-last-child(1){
-        display: none;
-    } 
-}
-@media (max-width:425px) {
-    .instagram__title--mobil{
-        display: block;
-    }
-    .instagram__title--desktop{
-        display: none;
     }
 }
 /* ==== Badgets ===== */

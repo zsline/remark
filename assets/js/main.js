@@ -86,7 +86,7 @@ playBtn.forEach((el=>{
 }));
 
 
-if(document.querySelector('.top__slider')){
+    if(document.querySelector('.top__slider')){
         const topSlider = new Swiper('.top__slider',{
         slidesPerView: 1,
         effect: 'slide',
@@ -97,9 +97,11 @@ if(document.querySelector('.top__slider')){
             nextEl: '.top__slider--next',
             prevEl: '.top__slider--prev',
         },
+  
 
     });
-    
+  
+
     const pauseSlider = document.querySelector('.top__slider--pause');
     const playSlider = document.querySelector('.top__slider--play');
     if(pauseSlider){
@@ -163,7 +165,25 @@ if(document.querySelector('.customer__slider')){
 
 
 }
-
+if(document.querySelector('.instagram__slider')){
+    const instagramSlider = new Swiper('.instagram__slider',{
+        spaceBetween: 20,
+        slidesPerView: 4,
+        effect: 'slide',
+        autoplay: true,
+        loop: true,
+        breakpoints: {
+            480: {
+                slidesPerView: 3,
+                spaceBetween: 4
+              },
+            800: {
+                slidesPerView: 4,
+                spaceBetween: 8
+              },
+        }
+    })
+}
 // ===== Body Overflow  ============ //
 function bodyHiddenScroll(){
     document.querySelector('body').style.overflowY = 'auto';
