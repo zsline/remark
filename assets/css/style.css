@@ -647,8 +647,6 @@ section>img{
         text-align: center;
         width: 100% !important;
         height: 64px;
-
-        /* box-sizing: border-box; */
     }
     .header.is_open nav ul li a::after{
         width: 100%;
@@ -666,6 +664,7 @@ section>img{
         top: auto;
         transform: translateX(0);
     }
+    .header.scroll .header__nav ul li a:hover::after,
     .header.scroll nav ul li.active a::after{
         bottom: 0;
         left: 0;
@@ -675,7 +674,7 @@ section>img{
         text-align: center;
         font-size: 14px !important;
         line-height: 14px;
-        width: 100%;
+        width: 100% !important;
         padding-bottom: 24px !important;
         padding-top: 24px !important;
     }
