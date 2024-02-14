@@ -459,7 +459,7 @@ section>img{
     width: 120px;
 }
 .header nav ul li:nth-child(3) {
-    width: 160px;
+    width: 146px;
 }
 .header.scroll nav ul li:nth-child(3) {
     width: 150px;
@@ -498,7 +498,8 @@ section>img{
     width: 100%;
     background-color: var(--black);
     top: -4px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .header nav ul li a{
     position: absolute;
@@ -509,7 +510,7 @@ section>img{
     text-align: center;
     white-space: nowrap;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 11px;
 }
 .header.scroll{
     position: fixed;
@@ -1011,7 +1012,9 @@ section>img{
 .video-title__desctop h2 span{
     color: var(--text-dark);
 }
-
+.video-2{
+    margin-top: 56px;
+}
 @media (max-width:560px) {
     .video-title__mobil{
         display: block;
@@ -1164,6 +1167,7 @@ section>img{
 /* Count ========================*/
 .count{
     padding: 26px 0;
+    margin-top: 56px;
     background-color: var(--beige-light);
 }
 .count__wrapper{
